@@ -1,0 +1,3 @@
+'use client';
+import {useState} from 'react';
+export default function Logout(){const [busy,setBusy]=useState(false),[error,setError]=useState('');async function leave(){setBusy(true);try{const r=await fetch('/api/auth',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({action:'logout'})});if(!r.ok)throw Error();location.assign('/');}catch{setError('Não foi possível sair. Tente novamente.');setBusy(false);}}return <main className="error-page"><h1>Sair da sua conta?</h1><p>Você poderá entrar novamente quando quiser.</p>{error&&<p role="alert">{error}</p>}<button className="button primary" onClick={leave} disabled={busy}>{busy?'Saindo…':'Sair da conta'}</button> <a className="button secondary" href="/">Cancelar</a></main>;}
