@@ -1,0 +1,1 @@
+export default function NotFound(){return <main className="error-page"><span className="eyebrow">CONECTA</span><h1>Esta conexão não está disponível.</h1><p>O link pode estar incorreto ou a rede pode ter sido excluída.</p><a className="button primary" href="/">Ir para o início</a></main>;}
