@@ -1,0 +1,32 @@
+.theme-toggle{position:fixed;right:20px;bottom:20px;z-index:50;display:flex;align-items:center;gap:8px;min-height:44px;padding:10px 15px;background:#fff;color:#244735;border:1px solid #cedbd1;border-radius:24px;box-shadow:0 4px 20px #123b3420;font-size:12px;font-weight:600}
+.theme-sun{display:none}
+[data-theme=dark] .theme-moon{display:none}
+[data-theme=dark] .theme-sun{display:initial}
+@media screen{
+  html[data-theme=dark]{color-scheme:dark;color:#e4eee7;background:#101b16;--green:#91d3ad;--muted:#afc3b5;--line:#33483b}
+  [data-theme=dark] body{background:#101b16}
+  [data-theme=dark] :is(.sidebar,.topbar,.stats>div,.network-card,.search,.empty,.share-card,dialog,.theme-toggle){background:#1a2921;color:#e4eee7;border-color:#33483b}
+  [data-theme=dark] :is(.workspace-icon,.nav-item.active,.nav-count,.sidebar-tip,.stat-icon,.stat-icon.mint,.stat-icon.peach,.section-heading h2 span,.network-symbol,.security-badge,.card-preview,.new-card,.new-card>span,.empty-icon,.password-field button,.notice,.share-wifi,.share-password,.avatar,.pill,.floating-wifi){background:#263e30;color:#b8e0c5;border-color:#3b5543}
+  [data-theme=dark] .welcome-banner{background:#213929;border-color:#3b5543}
+  [data-theme=dark] .orbit{border-color:#436147}
+  [data-theme=dark] .floating-wifi{border-color:#213929}
+  [data-theme=dark] .floating-tag{background:#263e30;border-color:#3b5543;color:#e4eee7}
+  [data-theme=dark] .mini-card{color:#213c32}
+  [data-theme=dark] :is(.workspace small,.nav-label,.sidebar-tip p,.account small,.topbar strong,.secure-label,.page-heading p,.banner-copy p,.stats p,.stat-note,.place,.card-preview p,.new-card p,.footer,.list-meta,.tabs button,.modal-description,label small,.optional,.share-caption,.compatibility,.print-warning,.share-footer,.share-password span,.share-place,.empty p,.small-dialog>p,.help-steps p,.error-page p,.login-back){color:#afc3b5}
+  [data-theme=dark] :is(.eyebrow,.page-heading h1 span,.tabs button.selected,.card-preview a,.card-actions button,.new-card strong,.help-steps b,.scan-instruction,.login-switch,.tip-icon){color:#a8dcb8}
+  [data-theme=dark] .tabs button.selected{border-color:#91d3ad}
+  [data-theme=dark] :is(label input:not([type=checkbox]),label select){background:#122219;color:#e4eee7;border-color:#49624f}
+  [data-theme=dark] .search input{color:#e4eee7}
+  [data-theme=dark] input::placeholder{color:#a3b5a7;opacity:1}
+  [data-theme=dark] .secondary{background:#263e30;color:#e4eee7;border-color:#49624f}
+  [data-theme=dark] :is(.secondary:hover,.card-actions button:hover){background:#34533e}
+  [data-theme=dark] .primary{background:#367e54;color:#fff}
+  [data-theme=dark] .primary:hover{background:#408d60}
+  [data-theme=dark] .notice.amber{background:#3b3020;color:#f2cf94;border-color:#725b34}
+  [data-theme=dark] :is(.error,.delete-symbol){background:#462729;color:#ffb8b5}
+  [data-theme=dark] .share-page{background:radial-gradient(ellipse at 50% 15%,#223d2c,#101b16 65%);color:#e4eee7}
+  [data-theme=dark] :is(.card-actions,.sidebar-tip button){border-color:#33483b}
+  [data-theme=dark] dialog::backdrop{background:#030a07bb}
+}
+@media(max-width:700px){.theme-toggle{right:14px;bottom:14px;padding:11px;width:44px;height:44px;justify-content:center}.theme-toggle span{display:none!important}.footer{padding-bottom:70px}.share-footer{padding-bottom:55px}.toast{bottom:72px}}
+@media print{.theme-toggle{display:none!important}html[data-theme=dark]{color-scheme:light;color:#213c32;background:white}}

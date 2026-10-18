@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./theme.css";
+import Theme from "./theme";
 
 export const metadata: Metadata = {
   title: "Conecta · Wi-Fi para compartilhar",
@@ -17,8 +19,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
-      <body className="antialiased">{children}</body>
+    <html lang="pt-BR" suppressHydrationWarning>
+      <body className="antialiased"><Theme>{children}</Theme></body>
     </html>
   );
 }
