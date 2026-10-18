@@ -52,3 +52,9 @@ O build pode passar antes de configurar o banco. Sem as variáveis, a tela de lo
 ## Migração de dados antigos
 
 O banco do ChatGPT Sites não é transferido automaticamente ao Supabase. Usuários têm novos identificadores; qualquer importação precisa associar os registros às novas contas e manter a chave original para descriptografar os dados antigos. O código da Vercel não confia nos cabeçalhos de autenticação do ChatGPT Sites.
+
+## Estatísticas das redes
+
+Execute também `supabase/migrations/0002_analytics.sql` no SQL Editor do Supabase e clique em Run. Essa migração cria a tabela de eventos e a função de agregação; não altera as redes existentes. Depois, acesse **Estatísticas** no menu do painel. Sem essa migração, o compartilhamento continua funcionando, mas a coleta e a consulta de estatísticas ficam indisponíveis.
+
+Os eventos registram visualização, cópia de senha bem-sucedida, download concluído e abertura do diálogo de impressão. São deduplicados por rede, aba, tipo e dia UTC; visitas autenticadas do proprietário são ignoradas. O relatório mostra os últimos 7 ou 30 dias, começa após a ativação e não mede pessoas únicas, conexões ao roteador ou leitura de QR Code impresso. Apenas o proprietário autenticado consulta seus dados. Os eventos não incluem IP, e-mail ou credenciais Wi-Fi; são excluídos em cascata quando a rede é removida.
